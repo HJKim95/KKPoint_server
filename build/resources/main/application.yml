@@ -1,0 +1,62 @@
+server:
+  tomcat:
+    use-relative-redirects: true
+
+spring:
+  profiles:
+    active: local
+  messages:
+    basename: i18n/exception
+    encoding: UTF-8
+  jwt:
+    secret: doeltmzhq12#
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 3MB
+      max-request-size: 3MB
+
+
+cloud:
+  aws:
+    stack:
+      auto: false
+    region:
+      static: ap-northeast-2
+    credentials:
+      accessKey: AKIAUS2RWYGL2BULTGWF
+      secretKey: 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
+
+trot.program.id: PA000717
+
+clip.url.secret: mbcptrot$
+
+access.ip.to.manage: 61.34.177.0/24,1.235.105.192,0:0:0:0:0:0:0:1
+
+trot.sns.ios.env: develop
+
+default:
+  share:
+    image:
+      path: https://trot-static.idol-master.kr/share/default_share.jpg
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  metrics:
+    export:
+      atlas:
+        enabled: false

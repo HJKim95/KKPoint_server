@@ -1,0 +1,70 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.4.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.adiscope'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.1.RELEASE'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws-messaging', version: '2.2.1.RELEASE'
+	compile('com.amazonaws:aws-java-sdk-ses:1.11.227')
+	compile("org.springframework.boot:spring-boot-starter-actuator")
+	compile "org.springframework.boot:spring-boot-devtools"
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'mysql:mysql-connector-java'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	implementation 'io.springfox:springfox-swagger2:2.6.1'
+	implementation 'io.springfox:springfox-swagger-ui:2.6.1'
+	implementation 'net.rakugakibox.util:yaml-resource-bundle:1.1'
+	implementation 'com.google.code.gson:gson'
+
+	// Thymeleaf is used as the template engine for serving HTML
+	compile "org.springframework.boot:spring-boot-starter-thymeleaf"
+	compile 'org.thymeleaf.extras:thymeleaf-extras-java8time'
+	compile 'com.github.mxab.thymeleaf.extras:thymeleaf-extras-data-attribute'
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '3.0.4.RELEASE'
+
+	//commons
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+	compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
+	compile group: 'commons-codec', name: 'commons-codec', version: '1.14'
+	compile group: 'org.apache.commons', name: 'commons-pool2', version: '2.8.0'
+
+	compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.10.3'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+
+}
+
+// logging
+configurations.all {
+	exclude group: "commons-logging", module: "commons-logging"
+}
+dependencies {
+	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+	runtime "org.slf4j:jcl-over-slf4j:1.7.30"
+	compile "ch.qos.logback:logback-classic:1.2.3"
+	compile group: 'ch.qos.logback.contrib', name: 'logback-json-classic', version: '0.1.5'
+	compile group: 'ch.qos.logback.contrib', name: 'logback-jackson', version: '0.1.5'
+}
+
+test {
+	useJUnitPlatform()
+}

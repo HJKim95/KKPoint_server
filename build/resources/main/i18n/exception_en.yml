@@ -1,0 +1,63 @@
+unknown:
+  code: "9999"
+  msg: "An unknown error has occurred."
+userNotFound:
+  code: "1000"
+  msg: "This member not exist"
+entryPointException:
+  code: "1002"
+  msg: "You do not have permission to access this resource."
+accessDenied:
+  code: "1003"
+  msg: "A resource that can not be accessed with the privileges it has."
+communicationError:
+  code: "1004"
+  msg: "An error occurred during communication."
+notOwner:
+  code: "1006"
+  msg: "You are not the owner of this resource."
+resourceNotExist:
+  code: "1007"
+  msg: "This resource does not exist."
+tokenExpired:
+  code: "1008"
+  msg: "This token is expired."
+notExistToken:
+  code: "1009"
+  msg: "This token does not exist."
+invalidDevice:
+  code: "1010"
+  msg: "This device is not allowed."
+alreadyAction:
+  code: "1011"
+  msg: "Already Action"
+wrongPassword:
+  code: "1012"
+  msg: "Wrong Password"
+NeedLoginClip:
+  code: "1013"
+  msg: "로그인이 필요한 영상입니다."
+NotExistClip:
+  code: "1014"
+  msg: "존재하지 않는 영상입니다."
+NotUseClip:
+  code: "1015"
+  msg: "사용할 수 없는 영상입니다."
+InvalidClipPath:
+  code: "1016"
+  msg: "잘못된 접근입니다."
+ForbiddenVoteClip:
+  code: "1017"
+  msg: "투표 권한이 없습니다."
+NotExistVotingContent:
+  code: "1018"
+  msg: "투표 회차가 아닙니다."
+NotVoteClip:
+  code: "1019"
+  msg: "투표 클립 영상이 아닙니다."
+AlreadyVoteClip:
+  code: "1020"
+  msg: "이미 투표한 영상입니다."
+parameterException:
+  code: "1021"
+  msg: "파라미터 오류"
